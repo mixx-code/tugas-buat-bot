@@ -11,9 +11,9 @@ bot.command("start", (ctx) =>
     'Bot ini dibuat untuk tugas matakuliah kecerdasan buatan, bot ini bekerja dangan mengetikan "/kalimat_hari_ini", maka bot akan memberikan kaliam random untuk kalian'
   )
 );
-bot.command("kalimat_hari_ini", async (ctx) => {
+bot.command("kalimat_hari_ini", (ctx) => {
   try {
-    const response = await axios.get(
+    const response = axios.get(
       "https://candaan-api.vercel.app/api/text/random"
     );
     const kalimat = response.data.data;
